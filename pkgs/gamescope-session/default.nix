@@ -98,7 +98,7 @@ let
   };
 in stdenv.mkDerivation(finalAttrs: {
   pname = "gamescope-session";
-  version = "3.13.19-2";
+  version = "3.13.19-3";
 
   src = fetchFromGitHub {
     owner = "meisme-dev";
