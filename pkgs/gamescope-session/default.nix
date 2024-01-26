@@ -101,7 +101,7 @@ in stdenv.mkDerivation(finalAttrs: {
   version = "3.13.19-2";
 
   src = fetchFromGitHub {
-    owner = "Jovian-Experiments";
+    owner = "meisme-dev";
     repo = "PKGBUILDs-mirror";
     rev = "jupiter-main/gamescope-${finalAttrs.version}";
     hash = "sha256-NOpTVCSSufqsnjccEVAx9aQ4/eKcDsryjB7SI1rf3HA=";
