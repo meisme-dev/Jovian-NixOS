@@ -24,25 +24,9 @@ let
 
   # A very simplistic "session switcher." All it does is kill gamescope.
   sessionSwitcher = writeShellScriptBin "steamos-session-select" ''
-    session="''${1:-gamescope}"
-
-    echo "steamos-session-select: switching to $session"
-
-    if [[ "$session" != "plasma" ]]; then
-      >&2 echo "!! Unsupported session '$session'"
-      >&2 echo "Currently this can only be called by Steam to switch to Desktop Mode"
-      exit 1
-    fi
-
-    if [[ -n "$JOVIAN_DESKTOP_SESSION" ]]; then
-      session="$JOVIAN_DESKTOP_SESSION"
-      >&2 echo "Using preferred session '$session'"
-    fi
-
-    mkdir -p ~/.local/state
-    >~/.local/state/steamos-session-select echo "$session"
-
+    steam -shutdown
     systemctl stop --user gamescope-session
+    chvt 1
   '';
 
   wrappedSteam = steam-fhsenv.override (extraArgs // {
