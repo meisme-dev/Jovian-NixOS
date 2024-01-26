@@ -104,7 +104,7 @@ in stdenv.mkDerivation(finalAttrs: {
     owner = "meisme-dev";
     repo = "PKGBUILDs-mirror";
     rev = "jupiter-main/gamescope-${finalAttrs.version}";
-    hash = "";
+    hash = "sha256-1tWKBnZMATfCnS6JbrWNlMCJ2FxC2RqUhK/JFEC6c+8=";
   };
 
   patchPhase = ''
